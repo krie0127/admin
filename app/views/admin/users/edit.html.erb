@@ -2,6 +2,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+      <h1>User Edit</h1>
       <%= form_with model: @user, url: admin_user_path(@user), local: true do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
         <div class="form-group">
@@ -29,7 +30,7 @@
         </div>
         <div class="form-group">
           <%= f.label :role %>
-          <%= f.select :role, {}, class: 'form-control' %>
+          <%= f.select :role, [['Admin', 'admin'], ['User', 'general']], {}, class: 'form-control' %>
         </div>
         <%= f.submit class: 'btn btn-primary' %>
       <% end %>

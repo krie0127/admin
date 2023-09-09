@@ -2,14 +2,14 @@ class Admin::UsersController < Admin::BaseController
     before_action :set_user, only: %i[edit update show destroy]
   
     def index
-      @users = User.order(created_at: :desc)
+      @users = User.all
     end
   
     def edit; end
   
     def update
       if @user.update(user_params)
-          redirect_to admin_user_path(@user)
+          redirect_to admin_users_path
       else
         flash.now[:danger]
         render :edit

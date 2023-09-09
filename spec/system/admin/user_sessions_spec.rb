@@ -58,7 +58,7 @@ RSpec.describe "Admin::UserSessions", type: :system do
       expect(current_path).not_to eq('/admin'), 'admin権限のないユーザーでログインできていないかを確認してください'
       expect(current_path).to eq('/admin/login'), 'ログインの失敗時に別の画面の遷移していないかを確認してください'
       # expect(current_path).not_to eq('/posts'), '入力項目が不足している場合にログインできていないかを確認してください'
-      # expect(current_path).to eq('/admin'), 'ログインの失敗時に別の画面の遷移していないかを確認してください'
+      # , 'ログインの失敗時に別の画面の遷移していないかを確認してください'
     end
 
     it '1-3：存在しないユーザーでログインができない' do

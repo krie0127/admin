@@ -2,14 +2,14 @@ class Admin::PostsController < Admin::BaseController
     before_action :set_post, only: %i[edit update show destroy]
   
     def index 
-      @posts = Post.order(created_at: :desc)
+      @posts = Post.all
     end
   
     def edit; end
   
     def update
       if @post.update(post_params)
-        redirect_to admin_post_path(@post)
+        redirect_to admin_posts_path
       else
         flash.now[:danger] = "Content can't be blank"
         render :edit
@@ -30,7 +30,7 @@ class Admin::PostsController < Admin::BaseController
     end
   
     def post_params
-      params.require(:post).permit(:title, :content, :post_image_cache)
+      params.require(:post).permit(:title, :content, :post_image, :post_image_cache)
     end
   end
   

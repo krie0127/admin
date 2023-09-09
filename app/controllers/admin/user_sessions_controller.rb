@@ -10,7 +10,8 @@ class Admin::UserSessionsController < Admin::BaseController
       if @user
         redirect_to admin_root_path
       else
-        flash.now[:danger] = "Login failed"
+        flash.now[:danger] = "Login failed."
+        render :new
       end
     end
   
