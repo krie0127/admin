@@ -32,3 +32,4 @@ class Admin::PostsController < Admin::BaseController
   def post_params
     params.require(:post).permit(:title, :content, :post_image, :post_image_cache)
   end
+end

@@ -4,7 +4,7 @@ class Admin::UserSessionsController < Admin::BaseController
   layout 'layouts/admin_login'
 
   def new; end
-  
+
   def create
     @user = login(params[:email], params[:password])
     if @user
