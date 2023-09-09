@@ -1,0 +1,19 @@
+<tr>
+  <td>
+    <%= post.id %>
+  </td>
+  <td>
+    <%= link_to post.title, admin_post_path(post) %>
+  </td>
+  <td>
+    <%= link_to post.content, admin_post_path(post) %>
+  </td>
+  <td>
+    <%= l post.created_at, format: :long %>
+  </td>
+  <td>
+    <%= link_to 'Show', admin_post_path(post), class: 'btn btn-info' %>
+    <%= link_to 'Edit', edit_admin_post_path(post), class: 'btn btn-success' %>
+    <%= link_to 'Delete', admin_post_path(post), method: :delete, data: { confirm: 'Are yor sure?' }, class: 'btn btn-danger' %>
+  </td>
+</tr>
