@@ -5,10 +5,11 @@ class Admin::BaseController < ApplicationController
   private
 
   def not_authenticated
-    flash[:warning] = t('defaults.message.require_login')
+    flash[:warning] = 'Login required.'
+    redirect_to admin_login_path
   end
 
   def check_admin
-    redirect_to admin_login_path, warning: t('defaults.message.not_autheorized') unless current_user&.admin?
+    redirect_to admin_login_path, warning: 'Admin required.' unless current_user.admin?
   end
 end
