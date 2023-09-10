@@ -24,6 +24,10 @@
           <td><%= @user.role %></td>
         </tr>
         <tr>
+          <th scope="row">Email</th>
+          <td><%= @user.email %></td>
+        </tr>
+        <tr>
           <th scope="row">Created_at</th>
           <td><%= l @user.created_at, format: :long %></td>
         </tr>
