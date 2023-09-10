@@ -1,7 +1,7 @@
 class Admin::PostsController < Admin::BaseController
   before_action :set_post, only: %i[edit update show destroy]
 
-  def index 
+  def index
     @posts = Post.all
   end
 
@@ -28,7 +28,7 @@ class Admin::PostsController < Admin::BaseController
   def set_post
     @post = Post.find(params[:id])
   end
-  
+
   def post_params
     params.require(:post).permit(:title, :content, :post_image, :post_image_cache)
   end
